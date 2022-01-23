@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="icon" href="https://gitee.com/tzh363231879/picgo/raw/master/心favicon.png" type ="image/x-icon">
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Gallery</title>
+		<style>
+			* {
+				font-family: 'montserrat', sans-serif;
+				text-align: center;
+			}
+			body {
+				background-color: rgb(186, 217, 245);
+				/* 弹性布局 */
+				background: url(https://gitee.com/tzh363231879/picgo/raw/master/相册背景.jpg);
+                background-position: center 0;
+				display: flex;
+				justify-content: center;
+			}
+			/*标题下那条横线*/
+			.border {
+				width: 180px;
+				height: 4px;
+				background: rgb(218, 89, 38);
+				margin: 30px auto;
+			}
+			/*整个瀑布流的布局*/
+			.bigBox {
+				max-width: 1480px;
+				/* 设置5列显示 */
+				column-count: 5;
+				/* 规定列间的间隔为 15 像素： */
+				column-gap: 15px;
+				
+			}
+			/*图片框的样式（里面放图片以及一些说明文字）*/
+			.image {
+				margin-bottom: 6px;
+				float: left; 
+				position: relative; 
+				box-shadow: 3px 3px 10px rgb(236, 210, 210);
+				overflow:hidden;
+				border-radius: 15px;
+			}
+			/*图片样式*/
+			.image img {
+				width: 100%;
+				border-radius: 15px;
+				transition: 0.4s;
+			}
+			/*说明文字背景*/
+			.image span {
+				width: 100%;				
+				height: 75px; 
+				background: #333;
+				position: absolute;       
+				left: -500px;
+				bottom: 0px;
+				filter: Alpha(opacity=80);
+				-moz-opacity: 0.8; 
+				opacity: 0.8; 
+				padding: 0px; 
+				-webkit-transition: left 0.5s ease;
+			}
+			/*文字一级标题*/
+			.image span h1 {
+				height: 0px;             /*50px*/
+				color: #fff;
+				font-size:18px;
+				text-align: center;
+				position: relative;
+				left: -500px;
+				-webkit-transition: left 1s ease;
+			}
+			.image span p {
+				line-height: 45px; 
+				font-size:14px; 
+				color: #fff;
+				position: relative; 
+				-webkit-transition: left 1s ease;
+				color:rgb(186, 217, 245)
+			}
+
+			
+			/*设置图片以及说明文字的隐藏动作*/
+			.image:hover img {
+				transform: scale(1.1) rotate(1deg);
+			}
+			.image:hover span {
+				left: 0px;
+			}
+			.image:hover span h1 {
+				left: 0px;
+			}
+			.image:hover span p {
+				left: 0px;
+			}
+			
+
+			/* 判断设备宽度，当最大宽度为1200px时，显示4列 */
+			@media (max-width:1200px) {
+				.bigBox {
+					column-count: 4;
+				}
+			}
+			/* 当最大宽度为850px时，显示3列  */ 
+			@media (max-width:850px) {
+				.bigBox {
+					column-count: 3;
+				}
+			}
+			/* 当最大宽度为600px时，显示2列   */ 
+			@media (max-width:600px) {
+				.bigBox {
+					column-count: 2;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="bigBox">
+			<h1>📷相册🎇</h1>
+			<div class="border"></div>
+
+			<!---图片--------------------------------------------------------------------->
+			<div class="image">
+				<img src="img/1.jpg" alt=""> 
+				<span>
+					<h1>随手记录~</h1>
+					<p>2022.1.23</p>
+				</span>
+			</div>
+			<div class="image">
+				<img src="img/2.jpg" alt=""> 
+				<span>
+					<h1>随手记录~</h1>
+					<p>2022.1.23</p>
+				</span>
+			</div>
+			<div class="image">
+				<img src="https://gitee.com/tzh363231879/picgo/raw/master/可爱.gif" alt="">
+				<span>
+					<h1>动态头像</h1>
+            		<p>2022.1.23</p>
+				</span>
+			</div>
+			<div class="image">
+				<img src="https://gitee.com/tzh363231879/picgo/raw/master/longnvpu.png" alt="">
+				<span>
+					<h1>康娜酱</h1>
+            		<p>2022.1.23</p>
+				</span>
+			</div>
+			<div class="image">
+				<img src="img/13.jpg" alt="">
+				<span>
+					<h1>随手记录~</h1>
+            		<p>2022.1.23</p>
+				</span>
+			</div>
+			<div class="image">
+				<img src="img/26.jpg" alt="">
+				<span>
+					<h1>随手记录~</h1>
+            		<p>2022.1.23</p>
+				</span>
+			</div>
+			<div class="image">
+				<img src="img/27.jpg" alt="">
+				<span>
+					<h1>随手记录~</h1>
+            		<p>2022.1.23</p>
+				</span>
+			</div>
+			<div class="image">
+				<img src="img/30.jpg" alt="">
+				<span>
+					<h1>随手记录~</h1>
+            		<p>2022.1.23</p>
+				</span>
+			</div>
+
+			<!---图片--------------------------------------------------------------------->
+		</div>
+
+		
+		<!--瀑布流布局作用
+		 1、因为瀑布流有吸引力，瀑布流会在它的页面底部给你不断地加载新的暗示信息，滑动的时候会不停的出现新的东西，
+		 通过给出不完整的视觉图片去吸引你的好奇心，让你停不下来想要不断的向下探索。采用这种方案的产品，
+		 往往可以通过瀑布流加强用户的停留时间，提高用户的使用粘度。
+		 
+		 2、用户一扫而过的快速阅读模式，短时间内可以看到大量的信息，
+		 瀑布流的懒加载模式，又避免点击的的翻页操作，在最小的操作成本下能够获得最多的内容体验，
+		 瀑布流的视觉方式，让人容易沉浸其中，不容易被打断。
+		 
+		 3、另外瀑布流的主要特质就是：定宽而不定高，这样的页面设计区别于传统的矩阵式图片布局模式，
+		 巧妙的利用视觉层级，视线的任意流动来缓解视觉的疲劳。 
+		 background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        background-position: center 0;
+
+		transform: scale(1.1) rotate(2deg);
+		-->
+
+	</body>
+</html>
+
