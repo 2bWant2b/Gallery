@@ -12,7 +12,7 @@
 				text-align: center;
 			}
 			body {
-				background-color: rgb(186, 217, 245);
+				background-color: rgb(0, 0, 0);
 				/* 弹性布局 */
 				background: url(https://gitee.com/tzh363231879/picgo/raw/master/相册背景.jpg);
                 background-position: center 0;
@@ -40,7 +40,7 @@
 				margin-bottom: 6px;
 				float: left; 
 				position: relative; 
-				box-shadow: 3px 3px 10px rgb(236, 210, 210);
+				/*box-shadow: 3px 3px 10px rgb(236, 210, 210);*/ 	/*TODO动态阴影*/
 				overflow:hidden;
 				border-radius: 15px;
 			}
@@ -85,6 +85,9 @@
 
 			
 			/*设置图片以及说明文字的隐藏动作*/
+			.image:hover {							/*TODO动态阴影3px 3px 10px rgb(236, 210, 210)*/
+				box-shadow: 0px 0px 10px 5px rgb(236, 210, 210);
+			}
 			.image:hover img {
 				transform: scale(1.1) rotate(1deg);
 			}
@@ -126,13 +129,7 @@
 			<div class="border"></div>
 
 			<!---图片--------------------------------------------------------------------->
-			<div class="image">
-				<img src="img/1.jpg" alt=""> 
-				<span>
-					<h1>随手记录~</h1>
-					<p>2022.1.23</p>
-				</span>
-			</div>
+			
 			<div class="image">
 				<img src="img/2.jpg" alt=""> 
 				<span>
@@ -180,6 +177,20 @@
 				<span>
 					<h1>随手记录~</h1>
             		<p>2022.1.23</p>
+				</span>
+			</div>
+			<div class="image">
+				<img src="img/29.jpg" alt="">
+				<span>
+					<h1>恭喜EDG！\^o^/</h1>
+            		<p>2021.11.7</p>
+				</span>
+			</div>
+			<div class="image">
+				<img src="img/30.jpg" alt="">
+				<span>
+					<h1>恭喜EDG！\^o^/</h1>
+            		<p>2021.11.7</p>
 				</span>
 			</div>
 			<div class="image">
